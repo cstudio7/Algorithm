@@ -10,3 +10,7 @@ function reverseString(str){
  return arrRev.reverse().toString();
 }
 console.log(reverseString("Victoria"))
+
+//.split()
+//.reverse()
+//.toString()

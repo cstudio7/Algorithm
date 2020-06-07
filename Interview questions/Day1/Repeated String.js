@@ -1,6 +1,6 @@
-// Lilah has a string, , of lowercase English letters that she repeated infinitely many times.
+// Lilah has a string, s, of lowercase English letters that she repeated infinitely many times.
 //
-//     Given an integer, , find and print the number of letter a's in the first  letters of Lilah's infinite string.
+//Given an integer, n, find and print the number of letter a's in the first n letters of Lilah's infinite string.
 //
 //     For example, if the string  and , the substring we consider is , the first  characters of her infinite string. There are  occurrences of a in the substring.
 //
@@ -26,7 +26,7 @@
         let c = 0,
             ca = 0,
             r = n % s.length
-
+        //var i = str.length - 1; i >= 0; i--
         for (let i = s.length; i-- > 0;) {
             if (s.charAt(i) == 'a') {
                 ++c
@@ -73,7 +73,8 @@ JavaScript solution. Using any kind of loop will only make it timeout.
 }
 
 
-Javascript solution with regex:
+
+// Javascript solution with regex:
 
 function repeatedString(s, n) {
     const a = s.match(/a/g);
