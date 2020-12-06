@@ -56,42 +56,36 @@
 //
 // The triplets satisfying are index , , , .
 
-
 // WORKING
-// function countTriplets(arr, r) {
-//     var map2 = {};
-//     var map3 = {};
-//     var count = 0;
-//     for (var i = 0; i < arr.length; ++i) {
-//         var n = arr[i];
-//         if (map3[n]) {
-//             count += map3[n];
-//         }
-//         if (map2[n]) {
-//             map3[n * r] = map3[n * r] ? map3[n * r] + map2[n] : map2[n];
-//         }
-//         map2[n * r] = map2[n * r] ? map2[n * r] + 1 : 1;
-//     }
-//
-//     return count;
-// }
-
+function countTriplets(arr, r) {
+    var map2 = {};
+    var map3 = {};
+    var count = 0;
+    for (var i = 0; i < arr.length; ++i) {
+        var n = arr[i];
+        if (map3[n]) {
+            count += map3[n];
+        }
+        if (map2[n]) {
+            map3[n * r] = map3[n * r] ? map3[n * r] + map2[n] : map2[n];
+        }
+        map2[n * r] = map2[n * r] ? map2[n * r] + 1 : 1;
+    }
+    return count;
+}
 
 // NOT WORKING
 function countTripletsWHAT(arr, r) {
     let count = 0;
     let dict2 = {};
     let dict3 = {};
-
-    for (let num of arr) {
+    for(let num of arr) {
         count += (dict3[num] || 0);
         dict2[num * r] = (dict2[num * r] || 0) + 1;
         dict3[num * r] = (dict3[num * r] || 0) + (dict2[num] || 0);
     }
-
     return count;
 }
-
 
 // function countTriplets(arr, r) {
 //
@@ -107,7 +101,6 @@ function countTripletsWHAT(arr, r) {
 //     });
 //     return res;
 // }
-
 
 // function countTriplets(arr, r) {
 //     let count = 0;

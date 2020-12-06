@@ -1,3 +1,4 @@
+
 // You are given  queries. Each query is of the form two integers described below:
 //     -  : Insert x in your data structure.
 // -  : Delete one occurence of y from your data structure, if present.
@@ -14,6 +15,7 @@
 // (2,1)       [1,1]
 // (3,2)                   1
 // Return an array with the output: .
+
 //
 // Function Description
 //
@@ -91,10 +93,7 @@
 //
 // When the first output query is run, the array is empty. We insert two 's and two 's before the second output query,  so there are two instances of elements occurring twice. We delete a  and run the same query. Now only the instances of  satisfy the query.
 
-
-
 // Solution
-
 const func = arr => {
     const result = [];
     const hash = {};
