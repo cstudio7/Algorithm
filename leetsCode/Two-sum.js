@@ -8,6 +8,33 @@
 
 
 //Solution 1
+// Fastest Solution
+const twoSum = (nums, target) => {
+    const map = {};
+
+    for (let i = 0; i < nums.length; i++) {
+        const another = target - nums[i];
+
+        if (another in map) {
+            return [map[another], i];
+        }
+
+        map[nums[i]] = i;
+    }
+
+    return null;
+};
+
+let dic = {}
+for(let i = 0; i < nums.length; i++) {
+    if (target-nums[i] in dic) {
+        return [dic[target-nums[i]], i]
+    }
+    dic[nums[i]] = i
+}
+
+
+// Solution 2
 
 const twoSum = (arr, target) => {
     var result = [];
@@ -25,3 +52,17 @@ const twoSum = (arr, target) => {
 console.log(twoSum([2, 7, 11, 15], 9));
 // => Output [ 0, 1 ]
 
+// My Brute force Solution
+
+const twoSum = (arr, target) => {
+    for(let i = 0; i < arr.length - 1; i++){
+        for(let j = 0; j < arr.length - 1; j++){
+            if(arr[i] + arr[j + 1] == target){
+                return 'Yes'
+            }
+        }
+    }
+    return 'No'
+}
+
+console.log(twoSum([2,11,15,7], 9))

@@ -171,15 +171,21 @@
 //
 
 
-function findOdd(A) {
-    let res = 0;
-    for( let num in A) {
-        res ^= A[num];
-    }
-    return res;
-}
+// const twoSum = (nums, target) => {
+//     const map = {};
+//
+//     for (let i = 0; i < nums.length; i++) {
+//         const another = target - nums[i];
+// console.log(map, another)
+//         if (another in map) {
+//             console.log(map, another)
+//             return [map[another], i];
+//         }
+//
+//         map[nums[i]] = i;
+//     }
+//
+//     return null;
+// };
 
-
-// const findOdd = (xs) => (xs).reduce((a, b) => a ^ b);
-
-console.log(findOdd([1, 6, 6, 1]));
+console.log('hi')

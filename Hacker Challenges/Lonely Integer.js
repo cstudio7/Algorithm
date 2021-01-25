@@ -13,3 +13,5 @@ The first line of the input contains an integer N indicating number of integers.
     return res;
 }
 
+// Note
+// Brute force did not help me in searching for duplicate
