@@ -131,11 +131,55 @@
     // const result = getLetterRankWords('1123');
     // console.log(result)
 
-const we = 4
-const we1 = 4
-const we2 = 4
-const we3 = 4
+// const we = 4
+// const we1 = 4
+// const we2 = 4
+// const we3 = 4
+//
+// const further = we+we1+we2+we3
+// const wepro = further/3
+// console.log(wepro.toFixed(1))
+// const moment = require('moment')
+// const ner = Date.parse(new Date());
+// const ne = moment(ner).add(3,'d').format()
+// const we2 = Date.parse(ne)
+//
+// if(we2 > ner){
+//     console.log('done')
+// }else console.log('not done')
 
-const further = we+we1+we2+we3
-const wepro = further/3
-console.log(wepro.toFixed(1))
+// Complete the lonelyinteger function below.
+// function lonelyinteger(a) {
+//     let unique = [];
+//     for(let i = 0; i<=a.length; i++){
+//         if(a.includes(a[i])){
+//      console.log(a[i])
+//         }
+//
+//
+//         // for(let j = 0; j<=a.length; j++){
+//         //     if(a[i] != a[j]){
+//         //         console.log(a[j])
+//         //     }
+//         // }
+//     }
+// }
+//
+// console.log(lonelyinteger([1,2,3,4,3,2,1]))
+//
+//
+//
+
+
+function findOdd(A) {
+    let res = 0;
+    for( let num in A) {
+        res ^= A[num];
+    }
+    return res;
+}
+
+
+// const findOdd = (xs) => (xs).reduce((a, b) => a ^ b);
+
+console.log(findOdd([1, 6, 6, 1]));
