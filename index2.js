@@ -77,59 +77,59 @@
 // console.log(occurs);
 
 
-    // function getLetterRankWords(str) {
-    //     let letterRanks = {};
-    //     let alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    //     for (let i = 0; i < alphabet.length; i++) {
-    //         letterRanks[ i+1 ] = alphabet[i];
-    //     }
-    //     let results = {};
-    //     let gobbleString = function(str, remainingStr, posToConsider) {
-    //         // console.log('---his', str)
-    //         console.log(str, remainingStr, posToConsider)
-    //         // console.log(remainingStr)
-    //         if (remainingStr === "") {
-    //             console.log(results)
-    //             results[str] = true;
-    //             return;
-    //         }
-    //
-    //         if (posToConsider === 2 && remainingStr.length >= 2) {
-    //             console.log('---hi', str)
-    //                 // Consider the next two numbers
-    //             let nextTwoNum = Number( remainingStr[0] + remainingStr[1]);
-    //
-    //             // console.log(nextTwoNum)
-    //             // console.log(remainingStr)
-    //
-    //             let letter = letterRanks[ nextTwoNum ];
-    //             if (letter) {
-    //                 gobbleString(str + letter, remainingStr.substring(2), 1);
-    //                 if (remainingStr.length >= 2) {
-    //                     gobbleString(str + letter, remainingStr.substring(2), 2);
-    //                 }
-    //             }
-    //         } else {
-    //             let letter = letterRanks[ Number(remainingStr[0])];
-    //             // console.log(letter)
-    //             if (letter) {
-    //                 console.log(str, remainingStr, posToConsider)
-    //                 gobbleString(str + letter, remainingStr.substring(1), 1);
-    //                 if (remainingStr.length >= 2) {
-    //                     console.log(str, remainingStr, posToConsider)
-    //                     gobbleString(str + letter, remainingStr.substring(1), 2);
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     gobbleString("", str, 1);
-    //     if (str.length >= 2) {
-    //         gobbleString("", str, 2);
-    //     }
-    //     return Object.keys(results);
-    // }
-    // const result = getLetterRankWords('1123');
-    // console.log(result)
+// function getLetterRankWords(str) {
+//     let letterRanks = {};
+//     let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+//     for (let i = 0; i < alphabet.length; i++) {
+//         letterRanks[ i+1 ] = alphabet[i];
+//     }
+//     let results = {};
+//     let gobbleString = function(str, remainingStr, posToConsider) {
+//         // console.log('---his', str)
+//         console.log(str, remainingStr, posToConsider)
+//         // console.log(remainingStr)
+//         if (remainingStr === "") {
+//             console.log(results)
+//             results[str] = true;
+//             return;
+//         }
+//
+//         if (posToConsider === 2 && remainingStr.length >= 2) {
+//             console.log('---hi', str)
+//                 // Consider the next two numbers
+//             let nextTwoNum = Number( remainingStr[0] + remainingStr[1]);
+//
+//             // console.log(nextTwoNum)
+//             // console.log(remainingStr)
+//
+//             let letter = letterRanks[ nextTwoNum ];
+//             if (letter) {
+//                 gobbleString(str + letter, remainingStr.substring(2), 1);
+//                 if (remainingStr.length >= 2) {
+//                     gobbleString(str + letter, remainingStr.substring(2), 2);
+//                 }
+//             }
+//         } else {
+//             let letter = letterRanks[ Number(remainingStr[0])];
+//             // console.log(letter)
+//             if (letter) {
+//                 console.log(str, remainingStr, posToConsider)
+//                 gobbleString(str + letter, remainingStr.substring(1), 1);
+//                 if (remainingStr.length >= 2) {
+//                     console.log(str, remainingStr, posToConsider)
+//                     gobbleString(str + letter, remainingStr.substring(1), 2);
+//                 }
+//             }
+//         }
+//     }
+//     gobbleString("", str, 1);
+//     if (str.length >= 2) {
+//         gobbleString("", str, 2);
+//     }
+//     return Object.keys(results);
+// }
+// const result = getLetterRankWords('1123');
+// console.log(result)
 
 // const we = 4
 // const we1 = 4
@@ -188,4 +188,4 @@
 //     return null;
 // };
 
-console.log('hi')
+console.log('his')
