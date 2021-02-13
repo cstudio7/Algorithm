@@ -24,10 +24,6 @@
 //
 //
 
-
-
-
-
 // function countTriplets(arr, r) {
 //     let count = 0;
 //     let num_counts = {};
@@ -61,7 +57,6 @@
 //     return count;
 // }
 
-
 // let k = String(2);
 // let n = 35;
 // let s = String("");
@@ -75,7 +70,6 @@
 // console.log(s.split(''))
 // // print result
 // console.log(occurs);
-
 
 // function getLetterRankWords(str) {
 //     let letterRanks = {};
@@ -188,4 +182,48 @@
 //     return null;
 // };
 
-console.log('his')
+
+// const arr = (ar) => {
+//     let keep = []
+//     let keen = {}
+//     // const init
+//
+//     for(let i = 0; i< ar.length; i++){
+//         let [first, second] = ar[i]
+//
+//         if(first === 1){
+//             keen[second] = (keen[second] + 1) || 1
+//         }
+//
+//         if(first === 2){
+//             if()
+//         }
+//         // if(ar[i][0] === 3){
+//         //     keep.pop()
+//         // }
+//     }
+//     console.log(keen)
+// };
+
+
+
+function repeatedString(s, n) {
+    let c = 0,
+        ca = 0,
+        r = n % s.length;
+    // console.log(s.length)
+    for (let i = s.length; i-- > 0;) {
+        // console.log(i)
+        if (s.charAt(i) == 'a') {
+            ++c
+            if (i < r){
+                console.log(i, r)
+                ++ca
+            }
+        }
+    }
+    console.log(ca)
+
+    return ((n - r) / s.length * c) + ca
+}
+console.log(repeatedString('abss', 10))
