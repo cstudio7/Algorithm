@@ -207,23 +207,29 @@
 
 
 
-function repeatedString(s, n) {
-    let c = 0,
-        ca = 0,
-        r = n % s.length;
-    // console.log(s.length)
-    for (let i = s.length; i-- > 0;) {
-        // console.log(i)
-        if (s.charAt(i) == 'a') {
-            ++c
-            if (i < r){
-                console.log(i, r)
-                ++ca
-            }
-        }
-    }
-    console.log(ca)
+// function repeatedString(s, n) {
+//     let c = 0,
+//         ca = 0,
+//         r = n % s.length;
+//     // console.log(s.length)
+//     for (let i = s.length; i-- > 0;) {
+//         // console.log(i)
+//         if (s.charAt(i) == 'a') {
+//             ++c
+//             if (i < r){
+//                 console.log(i, r)
+//                 ++ca
+//             }
+//         }
+//     }
+//     console.log(ca)
+//
+//     return ((n - r) / s.length * c) + ca
+// }
+// console.log(repeatedString('abss', 10))
 
-    return ((n - r) / s.length * c) + ca
-}
-console.log(repeatedString('abss', 10))
+
+
+const new3 = [1,2,2,4]
+const ne = new Set([...new3])
+console.log(ne)

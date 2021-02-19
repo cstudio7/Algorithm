@@ -37,6 +37,24 @@
         return ((n - r) / s.length * c) + ca
     }
 
+// function repeatedString(s, n) {
+//     const len = s.length;
+//     const div = Math.floor(n / len);
+//     let rem = n % len;
+//     let count = 0
+//     let count2 = 0
+//     for(let i = 0; i < len; i++){
+//         if(s[i] === 'a'){
+//             count++
+//             if(rem > i){
+//                 count2 ++
+//             }
+//         }
+//     }
+//     return (count * div )+ count2
+// }
+// console.log(repeatedString('aba', 10))
+
 
 // function repeatedString(s, n) {
 //     let fracNumber = Math.trunc(n / s.length);
