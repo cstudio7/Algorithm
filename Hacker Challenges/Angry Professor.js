@@ -11,7 +11,8 @@
 //
 //     Note: Non-positive arrival times () indicate the student arrived early or on time; positive arrival times () indicate the student arrived  minutes late.
 
-// Solution
-function angryProfessor(k, a) {
-    return a.filter(student => student <= 0).length >= k ? 'NO' : 'YES';
-}
+// // Solution
+// function angryProfessor(k, a) {
+//     return a.filter(student => student <= 0).length >= k ? 'NO' : 'YES';
+// }
+

@@ -1,4 +1,5 @@
-// Question: You are required to find missing numbers that are left out while an artist transports numbers from one array to other. The output array should be sorted.
+// Question: You are required to find missing numbers that are left out while an artist transports numbers from one array to other.
+// The output array should be sorted.
 //
 //     Input:
 // arr [ ] = {7, 2, 5, 3, 5, 3}

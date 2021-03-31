@@ -27,84 +27,85 @@
 
 //  Solution
 
-function minimumSwaps(arr) {
-    let swaps = 0;
-    let len = arr.length;
-    // Copy array
-    const arr2 = [...arr];
-    // Sorting the new array
-    // It will be used to know what's the next value in the array
-    // And swap if needed
-    arr2.sort((a, b) => {
-        if (a > b) return 1;
-        else if (a < b) return -1;
-        return 0;
-    });
+// function minimumSwaps(arr) {
+//     let swaps = 0;
+//     let len = arr.length;
+//     // Copy array
+//     const arr2 = [...arr];
+//     // Sorting the new array
+//     // It will be used to know what's the next value in the array
+//     // And swap if needed
+//     arr2.sort((a, b) => {
+//         if (a > b) return 1;
+//         else if (a < b) return -1;
+//         return 0;
+//     });
+//
+//     // Create an object with values of our array as keys
+//     // and position in array as values
+//     const map = arr.reduce((acc, cur, i) => {
+//         acc[cur] = i;
+//         return acc;
+//     }, {});
+//     // Now we loop through the array
+//     for (let i = 0; i < len; i += 1) {
+//
+//         const v1 = arr[i];
+//         const v2 = arr2[i];
+//
+//         if (v2 != v1) {
+//             swaps ++;
+//             // Use the map to avoid to compute each time the position
+//             const index = map[v2];
+//             // swap value
+//             arr[index] = v1;
+//             arr[i] = v2;
+//             // Update map
+//             map[v1] = index;
+//         }
+//
+//     }
+//     return swaps;
+// }
+//
+// function minimumSwaps(arr) {
+//     let swaps = 0;
+//     let smallest = Math.min(...arr);
+//     let temp;
+//     let indices = {};
+//
+//     arr.forEach((e,i) => indices[e] = i);
+//
+//     for (let i = 0; i < arr.length; i++) {
+//         let smallestIdx = indices[smallest];
+//
+//         if (arr[i] !== smallest) {
+//             temp = arr[i];
+//             arr[i] = smallest;
+//             arr[smallestIdx] = temp;
+//             swaps++;
+//             indices[smallest] = i;
+//             indices[temp] = smallestIdx;
+//         }
+//         smallest += 1;
+//     }
+//     return swaps;
+// }
+//
+//
+// function minimumSwaps(arr) {
+//     let swaps = 0;
+//     const sorted = [...arr].sort((a, b) => a - b),
+//         unsorted = arr;
+//
+//     for (let i = 0; i < arr.length; i++) {
+//         if (unsorted[i] !== sorted[i]) {
+//             let index = unsorted.indexOf(sorted[i], i),
+//                 temp = unsorted[i];
+//             unsorted[index] = temp;
+//             swaps++;
+//         }
+//     }
+//     return swaps;
+// }
 
-    // Create an object with values of our array as keys
-    // and position in array as values
-    const map = arr.reduce((acc, cur, i) => {
-        acc[cur] = i;
-        return acc;
-    }, {});
-    // Now we loop through the array
-    for (let i = 0; i < len; i += 1) {
-
-        const v1 = arr[i];
-        const v2 = arr2[i];
-
-        if (v2 != v1) {
-            swaps ++;
-            // Use the map to avoid to compute each time the position
-            const index = map[v2];
-            // swap value
-            arr[index] = v1;
-            arr[i] = v2;
-            // Update map
-            map[v1] = index;
-        }
-
-    }
-    return swaps;
-}
-
-function minimumSwaps(arr) {
-    let swaps = 0;
-    let smallest = Math.min(...arr);
-    let temp;
-    let indices = {};
-
-    arr.forEach((e,i) => indices[e] = i);
-
-    for (let i = 0; i < arr.length; i++) {
-        let smallestIdx = indices[smallest];
-
-        if (arr[i] !== smallest) {
-            temp = arr[i];
-            arr[i] = smallest;
-            arr[smallestIdx] = temp;
-            swaps++;
-            indices[smallest] = i;
-            indices[temp] = smallestIdx;
-        }
-        smallest += 1;
-    }
-    return swaps;
-}
-
-
-function minimumSwaps(arr) {
-    let swaps = 0;
-    const sorted = [...arr].sort((a, b) => a - b),
-        unsorted = arr;
-
-    for (let i = 0; i < arr.length; i++) {
-        if (unsorted[i] !== sorted[i]) {
-            let index = unsorted.indexOf(sorted[i], i),
-                temp = unsorted[i];
-            unsorted[index] = temp;
-            swaps++;
-        }
-    }
-    return swaps;
-}

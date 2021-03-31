@@ -75,86 +75,84 @@
 
 
   // Answers
-function hourGlass(arr) {
-    // we could set this to 3 given the problems constraints, but this allows changes
-    maxX = 3; // + (arr[0].length % 3)
-    maxY = 3; // + (arr.length % 3)
-    total = -Infinity;  // has to be -64, but
 
-    // begin at y == 0
-    for (let y = 0; y <= maxY; y++) {
-        for (let x = 0; x <= maxX; x++) {
-            // sum the top of hourglass
-            let sum = arr[y][x] + arr[y][x+1] + arr[y][x+2];
-
-            // get the middle of hourglass
-            sum += arr[y+1][x+1];
-
-            // sum the bottom of hourglass
-            sum += arr[y+2][x] + arr[y+2][x+1] + arr[y+2][x+2]
-
-            // don't store result to keep space complexity down
-            if (total < sum)
-                total = sum;
-        }
-    }
-
-    return total;
-}
-
-let max = -63;
-
-for (let i = 0; i < 4; i++) {
-    for (let j = 0; j < 4; j++) {
-        let sum = arr[i + 1][j + 1];
-        for (let k = 0; k < 3; k++) {
-            sum += arr[i][j + k];
-            sum += arr[i + 2][j + k]
-        }
-        if (sum > max) max = sum;
-    }
-}
-
-  return max;
-}
-
-
-function hourglassSum(arr) {
-    let top, mid, bottom = 0
-    //looking back idk why i thought these were pyramids!!!
-    let pyramid = []
-    let innerPyramid= []
-
-    function inOrder(a,b) {
-        return a - b
-    }
-
-    // outer loop moves up and down
-    for (const [index, value] of arr.entries()) {
-        if(index+2 < arr.length){
-            //inner loop goes left to right
-            for(const [innerIndex, innerValue] of value.entries()){
-                if(innerIndex + 2 < value.length){
-                    //get the sum of the top
-                    top = innerValue + value[innerIndex+1] + value[innerIndex+2]
-                    //get the sum of the mid
-                    mid = arr[index+1][innerIndex+1]
-                    //get the sum of the bottom
-                    bottom = arr[index+2][innerIndex]+arr[index+2][innerIndex+1]+arr[index+2][innerIndex+2]
-                    //get the sum of the entire hourglass
-                    innerPyramid[innerIndex] = top+mid+bottom
-                }else{
-                    break
-                }
-            }
-            //combine the two arrays
-            Array.prototype.push.apply(pyramid, innerPyramid)
-        }else{
-            break
-        }
-    }
-    return pyramid.sort(inOrder)[pyramid.length - 1]
-}
+// function hourGlass(arr) {
+//     // we could set this to 3 given the problems constraints, but this allows changes
+//     maxX = 3; // + (arr[0].length % 3)
+//     maxY = 3; // + (arr.length % 3)
+//     total = -Infinity;  // has to be -64, but
+//
+//     // begin at y == 0
+//     for (let y = 0; y <= maxY; y++) {
+//         for (let x = 0; x <= maxX; x++) {
+//             // sum the top of hourglass
+//             let sum = arr[y][x] + arr[y][x+1] + arr[y][x+2];
+//             // get the middle of hourglass
+//             sum += arr[y+1][x+1];
+//             // sum the bottom of hourglass
+//             sum += arr[y+2][x] + arr[y+2][x+1] + arr[y+2][x+2]
+//
+//             // don't store result to keep space complexity down
+//             if (total < sum)
+//                 total = sum;
+//         }
+//     }
+//
+//     return total;
+// }
+//
+// let max = -63;
+//
+// for (let i = 0; i < 4; i++) {
+//     for (let j = 0; j < 4; j++) {
+//         let sum = arr[i + 1][j + 1];
+//         for (let k = 0; k < 3; k++) {
+//             sum += arr[i][j + k];
+//             sum += arr[i + 2][j + k]
+//         }
+//         if (sum > max) max = sum;
+//     }
+// }
+//   return max;
+// }
+//
+//
+// function hourglassSum(arr) {
+//     let top, mid, bottom = 0
+//     //looking back idk why i thought these were pyramids!!!
+//     let pyramid = []
+//     let innerPyramid= []
+//
+//     function inOrder(a,b) {
+//         return a - b
+//     }
+//
+//     // outer loop moves up and down
+//     for (const [index, value] of arr.entries()) {
+//         if(index+2 < arr.length){
+//             //inner loop goes left to right
+//             for(const [innerIndex, innerValue] of value.entries()){
+//                 if(innerIndex + 2 < value.length){
+//                     //get the sum of the top
+//                     top = innerValue + value[innerIndex+1] + value[innerIndex+2]
+//                     //get the sum of the mid
+//                     mid = arr[index+1][innerIndex+1]
+//                     //get the sum of the bottom
+//                     bottom = arr[index+2][innerIndex]+arr[index+2][innerIndex+1]+arr[index+2][innerIndex+2]
+//                     //get the sum of the entire hourglass
+//                     innerPyramid[innerIndex] = top+mid+bottom
+//                 }else{
+//                     break
+//                 }
+//             }
+//             //combine the two arrays
+//             Array.prototype.push.apply(pyramid, innerPyramid)
+//         }else{
+//             break
+//         }
+//     }
+//     return pyramid.sort(inOrder)[pyramid.length - 1]
+// }
 
 
 

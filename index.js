@@ -230,6 +230,268 @@
 
 
 
-const new3 = [1,2,2,4]
-const ne = new Set([...new3])
-console.log(ne)
+// const we = '!foer'
+// console.log(we.charCodeAt(0))
+//
+// // const str = 'For more information, see Chapter 3.4.5.1';
+// // const re = /see (chapter \d+(\.\d)*)/i;
+// // const found = str.match(re);
+// // console.log(found)
+//
+// // str match
+// const str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+// const regexp = /[A-E]/gi;
+// const matches_array = str.match(regexp);
+//
+// console.log(matches_array);
+//
+// const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+//
+// console.log(p.replaceAll('dog', 'monkey'));
+
+// const isAnagram = function(s, t) {
+//     console.log(s)
+// };
+//
+// console.log(isAnagram("anagram","nagaram"))
+
+
+// function makeAnagram(a,b){
+//     let map = {};
+//     let index;
+//     for(let i of a){
+//         // index = i.charCodeAt(0) - 97;
+//         // map[index] = map[index] || 0;
+//         // map[index] = map[index] + 1;
+//         index = i.charCodeAt(0)- 97;
+//         console.log(index)
+//         map[index] = (map[index] + 1) || 1
+//     }
+//     console.log(map)
+//
+//     for(let i of b){
+//         index = i.charCodeAt(0) - 97;
+//         // map[index] = map[index] || 0;
+//         // map[index] -= 1;
+//
+//         map[index] = map[index] || 0
+//         map[index] -= 1
+//         console.log(map)
+//     }
+//     console.log(Object.values(map).reduce((a,b) => {
+//         return a + Math.abs(b);
+//     },0));
+// }
+//
+// console.log(makeAnagram('abcabc','zabcabcea'))
+// console.log(makeAnagram( 'fcrxzwscanmligyxyvym', 'jxwtrhvujlmrpdoqbisbwhmgpmeoke'))
+
+// const me = 'smart safe is doing well ooh'
+// const we = me.match(/[smart]/g)
+// console.log(we)
+
+// function fizzBuzz(n) {
+//
+//     // Write your code here
+//     for(let i = 1; i<=n; i++){
+//        if(i%3 === 0 && i%5 === 0 ){
+//            console.log('FizzBuzz')
+//        }else if(i%3 ===0){
+//            console.log('Fizz')
+//        }else if(i%5 ===0){
+//             console.log('Buzz')
+//         }else console.log(i)
+//     }
+// }
+//
+// console.log(fizzBuzz(15))
+// Competeative Game:
+// A group of friends are playing a video game together. During the game, each player earns a number of points. At the end of a round, players who achieve at least a certain rank get to "level up" their characters to gain increased ability. Given the scroes of the players at the end of a round, how many players will be able to level up?
+//     Example
+//     n = 4
+// k = 3
+// scores = [100, 50,50 25]
+// // function numPlayers(k, scores) {
+//     let sot = []
+//     for(let i = 0; i < scores.length; i++){
+//         if(scores[i] !== 0){
+//             sot.push(scores[i])
+//         }
+//     }
+//     const store = [];
+//     let count = 0;
+//     // Write your code here
+//     const arr = sot.sort((a,b)=> b-a)
+//     for(let i = 0; i < arr.length; i++){
+//         const num = arr[i]
+//         const new1 = arr.indexOf(num)
+//         store.push(new1 + 1)
+//     }
+//     for( let i =0; i < store.length; i++){
+//         if(k >= store[i]) count++
+//     }
+//     return count
+// }
+// console.log(numPlayers(4, [2, 2,0,3, 4, 5]))
+
+
+// function carParkingRoof(cars, k) {
+//     // Write your code here
+//    //  let cars2 = cars.sort((a,b)=>a-b)
+//    //  const firstNum = cars2[0] - 1
+//    //  let result = 0
+//    //
+//    //  for(let i = 0; i<cars2.length; i++){
+//    //      result = Math.min(cars2[i], cars2[i + 1])
+//    //      console.log(result)
+//    //  }
+//    // console.log(result - firstNum)
+//
+//    let  min1=999
+//     // #sort the cars according to their positions
+//     let cars2 = cars.sort((a,b)=>a-b)
+//     // console.log(cars2)
+//     // #taking all k combinations and checking the minimum value and maximum value
+//     for (let i =0; i<cars2.length; i++ ){
+//         // console.log(cars2[i])
+//         if((cars2[i+k-1]-cars2[i])<min1){
+//             min1=(cars2[i+k-1]-cars2[i])
+//         }
+//         console.log(min1)
+//
+//     }
+//     // #checking every combination and update the minimum value into the min1
+//
+//     // #returning the answer
+//     return min1
+// }
+//
+// console.log(carParkingRoof([6,2,12,7], 3))
+
+ // Question 3// disk space analysis
+
+
+
+// Complete the sockMerchant function below.
+
+
+// function findOdd(A) {
+//     let res = 0;
+//     for( let num in A) {
+//         res ^= A[num];
+//     }
+//     return res;
+// }
+//
+// console.log(findOdd([1,2,3,4,3,2,1]))
+
+// console.log( 8 ^= 8)
+
+
+
+//Solution 1
+// Fastest Solution
+// const twoSum = (nums, target) => {
+//     const map = {};
+//
+//     for (let i = 0; i < nums.length; i++) {
+//         const another = target - nums[i];
+//
+//         if ('2' in map) {
+//             return [map[another], i];
+//         }
+//         map[nums[i]] = i;
+//     }
+//
+//     return null;
+// };
+//
+// console.log(twoSum([2,7,11,15], 9))
+
+// 3. Reach the End in Time
+// A 2-D grid consisting of some blocked(representing as "#") and some unblocked (represented as'.') cells is given. The starting position of a pointer is in the top-left corner of the grid. It is guaranteed that the bottom-right cell is unplocked. Each cells of the grid is connected with the right, left, top, and bottom cells (if those cells exist). It takes 1 second for a pointer to move from a cell to its adjacent cell. If the pointer can reach the bottom-right corner of the grid within k seconds, return the dstring 'Yes'. Otherwise, return the string 'NO'.valueOf()
+//
+// Example
+// rows = 3
+// grid = ['..##', '#.##', '#...']
+// maxTime = 5
+//
+// ..##
+//     #.##
+//     #...
+// it will take the pointer 5 seconds to reach the bottom right corner.
+//     As long as k >= 5, return 'Yes'.
+
+// function maxSubsetSum(arr) {
+//     let arr1 = Math.max(...arr)
+//     let arr2 = []
+//     let arr3 = []
+//     let arr4 = []
+//     let arrSum = [1,2]
+//     for(let i =0; i < arr.length; i++){
+//         if(arr[i] !== arr1){
+//             arr2.push(arr[i])
+//         }
+//     }
+//     let arr2C = Math.max(...arr2)
+//     for(let i =0; i < arr2.length; i++){
+//         if(arr2[i] !== arr2C){
+//             arr3.push(arr2[i])
+//         }
+//     }
+//     let arr3C = Math.max(...arr3)
+//     for(let i =0; i < arr3.length; i++){
+//         if(arr3[i] !== arr3C){
+//             arr4.push(arr3[i])
+//         }
+//     }
+//     console.log(arr3C)
+//     console.log(arr4)
+// for(let i = 0; i < arr.length; i++){
+//   if(arr[i] === arr1 && arr[i - 1] !== arr3C){
+//       return arr1 + arr2C
+//   }
+// }
+//     return arr1+arr3C
+//
+// }
+
+// function maxSubsetSum(arr) {
+//     let maxArr = [];
+//     maxArr.push(0);
+//     maxArr.push(arr[0]);
+//     for(let i=2;i<=arr.length;++i){
+//         maxArr.push(Math.max(maxArr[i-2] + arr[i-1],maxArr[i-1],arr[i-1]));
+//     }
+//     return maxArr.pop();
+// }
+
+// function maxSubsetSum(arr) {
+//     let inc = arr[0], exc = 0;
+//     for (let i = 1; i < arr.length; i++) {
+//         // console.log(arr[i])
+//         let newInc = exc + arr[i];
+//         // [2,1,5]
+//         console.log(newInc, '----')
+//         let newExc = inc > exc ? inc : exc;
+//         console.log(newExc)
+//         inc = newInc;
+//         exc = newExc;
+//     }
+//     return inc > exc ? inc : exc;
+// }
+//
+// console.log(maxSubsetSum([2,3,1,1]))
+
+function whatFlavors(cost, k) {
+    const flavors = {};
+    for (let index = 0; index < cost.length; index++) {
+        if (flavors[k - cost[index]] !== undefined) {
+            console.log(`${flavors[k - cost[index]]} ${index + 1}`);
+        } else {
+            flavors[cost[index]] = index + 1;
+        }
+    }
+    console.log(flavors)
+}
+console.log(whatFlavors([4,3,2,5,7],8))
