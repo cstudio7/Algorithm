@@ -311,62 +311,7 @@
 //     n = 4
 // k = 3
 // scores = [100, 50,50 25]
-// // function numPlayers(k, scores) {
-//     let sot = []
-//     for(let i = 0; i < scores.length; i++){
-//         if(scores[i] !== 0){
-//             sot.push(scores[i])
-//         }
-//     }
-//     const store = [];
-//     let count = 0;
-//     // Write your code here
-//     const arr = sot.sort((a,b)=> b-a)
-//     for(let i = 0; i < arr.length; i++){
-//         const num = arr[i]
-//         const new1 = arr.indexOf(num)
-//         store.push(new1 + 1)
-//     }
-//     for( let i =0; i < store.length; i++){
-//         if(k >= store[i]) count++
-//     }
-//     return count
-// }
-// console.log(numPlayers(4, [2, 2,0,3, 4, 5]))
 
-
-// function carParkingRoof(cars, k) {
-//     // Write your code here
-//    //  let cars2 = cars.sort((a,b)=>a-b)
-//    //  const firstNum = cars2[0] - 1
-//    //  let result = 0
-//    //
-//    //  for(let i = 0; i<cars2.length; i++){
-//    //      result = Math.min(cars2[i], cars2[i + 1])
-//    //      console.log(result)
-//    //  }
-//    // console.log(result - firstNum)
-//
-//    let  min1=999
-//     // #sort the cars according to their positions
-//     let cars2 = cars.sort((a,b)=>a-b)
-//     // console.log(cars2)
-//     // #taking all k combinations and checking the minimum value and maximum value
-//     for (let i =0; i<cars2.length; i++ ){
-//         // console.log(cars2[i])
-//         if((cars2[i+k-1]-cars2[i])<min1){
-//             min1=(cars2[i+k-1]-cars2[i])
-//         }
-//         console.log(min1)
-//
-//     }
-//     // #checking every combination and update the minimum value into the min1
-//
-//     // #returning the answer
-//     return min1
-// }
-//
-// console.log(carParkingRoof([6,2,12,7], 3))
 
  // Question 3// disk space analysis
 
@@ -467,19 +412,193 @@
 // }
 
 // function maxSubsetSum(arr) {
-//     let inc = arr[0], exc = 0;
-//     for (let i = 1; i < arr.length; i++) {
-//         // console.log(arr[i])
-//         let newInc = exc + arr[i];
-//         // [2,1,5]
-//         console.log(newInc, '----')
-//         let newExc = inc > exc ? inc : exc;
-//         console.log(newExc)
-//         inc = newInc;
-//         exc = newExc;
+//     // let inc = arr[0], exc = 0;
+//     // for (let i = 1; i < arr.length; i++) {
+//     //     // console.log(arr[i])
+//     //     let newInc = exc + arr[i];
+//     //     // [2,1,5]
+//     //     console.log(newInc, '----')
+//     //     let newExc = inc > exc ? inc : exc;
+//     //     console.log(newExc)
+//     //     inc = newInc;
+//     //     exc = newExc;
+//     // }
+//     // return inc > exc ? inc : exc;
+//
+//     for(let i = 0; i<arr.length;i++){
+//
+//
+//         i--;
 //     }
-//     return inc > exc ? inc : exc;
+//     console.log(arr)
 // }
 //
 // console.log(maxSubsetSum([2,3,1,1]))
 
+// const me = (arr, m) => {
+//
+//     for(let i = 0; i < m; i++){
+//         let hold = arr[arr.length - 1]
+//         arr.pop()
+//         arr.unshift(hold)
+//     }
+//     console.log(arr)
+// }
+// console.log(me([1,2,3,4], 2))
+
+
+// const twoSum = (nums) => {
+//     let total = 0;
+//     let count
+//     for (let i = 0; i < nums.length; i++) {
+//         total += nums[i]
+//         count = ( nums[i] * 10)/2 - total
+//     }
+//     return count
+// };
+//
+// console.log(twoSum([1,2,3,4,5,6,7,8,9]))
+
+// const john_mary = (str) => {
+//
+//     let regex1 = /John/gi;
+//     let regex = /Mary/gi;
+//     let e =str.replace(regex1, "n")
+//     let f = e.replace(regex, "b")
+//     let h = 0;
+//     let k = 0;
+//     for(let i in f){
+//         if(f[i] === 'n') h++
+//         if(f[i] === 'b') k++
+//     }
+//     return h === k ? true : false
+// };
+//
+// console.log(john_mary('John&MarYkkddidjohn'))
+
+// const numOfItems = (arr, items) => {
+//     let result = 0
+//     for(let  i = 0; i < arr.length; i++){
+//         let count = 0
+//         if(arr[i] === items) result++
+//         if (Array.isArray(arr[i])) {
+//             // console.log(arr[i])
+//             let y
+//             y = me(arr[i], items)
+//             result+=y
+//         }
+//     }
+//     return result
+//
+// }
+//
+//  const me = (arr,items) => {
+//      let count = 0
+//      for(let  i = 0; i < arr.length; i++){
+//          if(arr[i] === items) count++
+//          if (Array.isArray(arr[i])) {
+//              let y
+//              y = me(arr[i],items)
+//              count+=y
+//          }
+//      }
+//      return count
+//  }
+//
+//
+// console.log(numOfItems([25,3,'h','g'], 25))
+
+// function filterNumbersFromArray(arr) {
+//     // Write the code that goes here
+//     for(let i =0; i< arr.length; i++){
+//         console.log(typeof arr[i])
+//     }
+//
+// }
+//
+// console.log(filterNumbersFromArray([2,'3']))
+
+// async function retryRequest(promiseFunc, nrOfRetries) {
+//     try {
+//          for(let i = 0; i<nrOfRetries; i++){
+//              return promiseFunc
+//          }
+//          return  promiseFunc
+//     }catch (e) {
+//         return e
+//     }
+// }
+//
+// let hasFailed = false;
+// function getUserInfo() {
+//     return new Promise((resolve, reject) => {
+//         if(!hasFailed) {
+//             hasFailed = true;
+//             reject("Exception!");
+//         } else {
+//             resolve("Fetched user!");
+//         }
+//     })
+// }
+// let promise = retryRequest(getUserInfo(), 3)
+// if(promise) {
+//     promise.then((result) => console.log(result))
+//         .catch((error) => console.log("Error!"));
+// }
+// module.exports.retryRequest = retryRequest;
+
+// function numPlayers(k, scores){
+//     let scores1 = scores.sort((a,b)=> b-a).filter(a=> a!==0)
+//     let arr = [1]
+//     for(let i =1; i<scores1.length; i++){
+//         if(scores1[i] === scores1[i-1]){
+//             arr.push(arr[i-1])
+//         }else{
+//             arr.push(i+1)
+//         }
+//     }
+//     console.log(arr)
+// }
+//
+// console.log(numPlayers(3,[100,50,50,25]))
+
+// function carParkingRoof(cars, k) {
+//     // Write your code here
+//     let cars2 = cars.sort((a,b)=>a-b)
+//     let count = 0
+//     count = cars2[0]
+//     for (let i =cars2[0]; i<cars2[k-1]; i++ ){
+//         count++
+//     }
+//     return count
+// }
+//
+// console.log(carParkingRoof([2,10,8,17], 3))
+
+
+
+
+// const diskSpaceAnalysis = (arr, m) => {
+//     const result = []
+//     // For following array [2, 5, 4, 6, 8] with x = 3, the answer is 4 see below
+//     //
+//     // The chunks would be:
+//     //
+//     //     [2, 5, 4] -> min: 2
+//     //     [5, 4, 6] -> min: 4
+//     //     [4, 6, 8] -> min: 4
+//
+//     let n = arr.length
+//     for(let i = 0; i<arr.length; i++){
+//         if(i >= n-2) break
+//         result.push(Math.min(...arr.slice(i,m + i)))
+//         console.log(arr)
+//     }
+//     return Math.max(...result)
+// }
+// console.log(diskSpaceAnalysis([2,5,4,6,8], 3))
+
+let arr = [1,2,3,2,5,6,6,4,]
+let me = arr.map(x=> arr.indexOf(x) < 3 ? x : 0 )
+console.log(me)
+console.log(arr.splice(0,3))
