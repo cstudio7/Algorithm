@@ -1,7 +1,9 @@
 // Parking Dilemma
 //
 // Problem Description
-// There are many cars parked in the parking lot. The parking space is a long straight line, with one parking space per meter. Many cars are currently parked, and you want to shelter from the rain by building a roof. It is required that at least the roofs of k cars are covered by the roofs. What is the minimum length to cover the roofs of k cars?
+// There are many cars parked in the parking lot. The parking space is a long straight line,
+// with one parking space per meter. Many cars are currently parked, and you want to shelter from the rain by building a roof.
+// It is required that at least the roofs of k cars are covered by the roofs. What is the minimum length to cover the roofs of k cars?
 //     This function has the following parameters:
 //
 //     cars: an integer array of length, representing the parking space for parking cars
@@ -25,19 +27,17 @@
 
 
 
-function carParkingRoof(cars, k) {
-    // Write your code here
-    let cars2 = cars.sort((a,b)=>a-b)
-    let count = 0
-    count = cars2[k-1] - cars[0];
-    for (let i = 0; i<cars2.length -k; i++ ){
-        if(count > cars2[k-1+i] - cars[i]){
-            count = cars[k-1+i] -cars[i]
-        }
-    }
-    return count + 1
-}
-
-
-
-console.log(carParkingRoof([2,10,8,17], 3))
+// function carParkingRoof(cars, k) {
+//     // Write your code here
+//     let cars2 = cars.sort((a,b)=>a-b)
+//     let count = 0
+//     count = cars2[k-1] - cars[0];
+//     for (let i = 0; i<cars2.length -k; i++ ){
+//         if(count > cars2[k-1+i] - cars[i]){
+//             count = cars[k-1+i] -cars[i]
+//         }
+//     }
+//     return count + 1
+// }
+//
+// console.log(carParkingRoof([2,10,8,17], 3))

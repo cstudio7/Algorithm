@@ -32,3 +32,22 @@
 //
 // Input: height = [1,2,1]
 // Output: 2
+
+function minStart(arr) {
+    // Write your code here
+    let count = Math.max(...arr)
+    if(sum(arr,count) === 0){
+        count++
+        sum(arr,count)
+    }
+    return
+}
+
+const sum = (arr, count) => {
+    for(let i = 0; i<arr.length; i++){
+        count = count + arr[i]
+        if(count === 0) return 0
+    }
+}
+
+console.log(minStart([-4,3,2,1]))

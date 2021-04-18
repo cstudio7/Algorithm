@@ -598,7 +598,159 @@
 // }
 // console.log(diskSpaceAnalysis([2,5,4,6,8], 3))
 
-let arr = [1,2,3,2,5,6,6,4,]
-let me = arr.map(x=> arr.indexOf(x) < 3 ? x : 0 )
-console.log(me)
-console.log(arr.splice(0,3))
+// let arr = [1,2,3,2,5,6,6,4,]
+// let me = arr.map(x=> arr.indexOf(x) < 3 ? x : 0 )
+// console.log(me)
+// console.log(arr.splice(0,3))
+
+// var maxArea = function(height) {
+//     let count = 0;
+//     let max
+//     for(let i = 0; i <height.length; i++){
+//         let min = height[i];
+//         if(height[i] > (height[height.length - i])) min = (height[height.length - i])
+//         console.log(height[i] , (height[height.length - i]), min)
+//        max = min * min
+//        if( max > count) count = max
+//     }
+//     return count
+// };
+//
+// console.log(maxArea([1,8,6,2,5,4,8,3,7]))
+
+
+// const reachTheEnd = (arr, maxTime) => {
+//     const grid = arr.map((x) => x.split(''))
+//     console.log(grid)
+//     let count
+//     let result
+//     let me = 'Yes'
+//     for(let i =0; i<arr.length;i++){
+//       for(let j =0; j<arr[i].length; j++){
+//           // console.log(arr[i][j])
+//           if( arr[i][j] === '.'){
+//               let s = recurse(i, j, arr, result)
+//               s === 'No' ? me = 'No' : ''
+//           }
+//
+//       }
+//     }
+//
+// return me
+//     // const grid = []
+//     // for(let x in arr){
+//     //     grid.push(arr[x].split(''))
+//     // }
+//     //
+//     // console.log(grid)
+//     // let count = 0;
+//     // let result = 'Yes';
+//     // for(let i = 0; i < grid.length;i++){
+//     //     for(let j = 0; j <grid[i].length;j++){
+//     //         if (grid[i][j] === '.'){
+//     //             count++
+//     //             let me
+//     //             terraform(parseInt(i), parseInt(j),grid) === 'No' ? result = me : ''
+//     //         }
+//     //     }
+//     // }
+//     // return count - 1 <= maxTime ? result : 'No'
+// }
+//
+// const recurse = (i,j,arr, re) => {
+//
+//
+//      if(arr[i][j+1] === 'undefined' || arr[i + 1] === undefined || arr[i+1][j] === undefined) return
+//      if( arr[i][j+1] === '#' & arr[i+1][j] === '#') {
+//          arr[i][j] = '#'
+//          return 'No'
+//      }
+//      // console.log(arr)
+//
+//     recurse(i,j+1,arr)
+//     recurse(i+1,j,arr)
+// }
+
+
+//convert stuff around to water
+// const terraform = (i, j,grid) => {
+//     if((grid[i][j+1] === undefined || grid[i+1] === undefined || grid[i+1][j] === undefined )) return
+//     if((grid[i+1][j] === '#' && grid[i][j+1] === '#')) {
+//         grid[i][j] = '#';
+//         return 'No'
+//     }
+//     terraform(i, j+1, grid);
+//     terraform(i+1, j, grid);
+//     if(terraform(i+1, j, grid) === 'No' && terraform(i, j+1, grid) === 'No') return 'No'
+// }
+
+// var foo = "bar";
+//
+// function bar() {
+//     var foo = "baz";
+//
+//     function baz(foo) {
+//         foo = "bam";
+//         bam = "yay";
+//     }
+//     baz();
+// }
+// bar();
+// foo;
+// bam;
+// baz();
+
+// var threeSum = function(nums) {
+//     var rtn = [];
+//     if (nums.length < 3) {
+//         return rtn;
+//     }
+//     nums = nums.sort(function(a, b) {
+//         return a - b;
+//     });
+//     for (var i = 0; i < nums.length - 2; i++) {
+//         if (nums[i] > 0) {
+//             return rtn;
+//         }
+//         if (i > 0 && nums[i] == nums[i - 1]) {
+//             continue;
+//         }
+//         for (var j = i + 1, k = nums.length - 1; j < k;) {
+//             console.log(k)
+//             if (nums[i] + nums[j] + nums[k] === 0) {
+//                 rtn.push([nums[i], nums[j], nums[k]]);
+//                 j++;
+//                 k--;
+//                 while (j < k && nums[j] == nums[j - 1]) {
+//                     j++;
+//                 }
+//                 while (j < k && nums[k] == nums[k + 1]) {
+//                     k--;
+//                 }
+//             } else if (nums[i] + nums[j] + nums[k] > 0) {
+//                 k--;
+//             } else {
+//                 j++;
+//             }
+//         }
+//     }
+//     return rtn;
+// };
+//
+//
+// console.log(threeSum([-1, 0, 1, 2, -1, -4]))
+
+class emp{
+    constructor(name, address){
+        this.name = name;
+        this.address = address
+    }
+
+    eat(){
+        console.log('I am happy ' + this.name)
+    }
+}
+
+let food = new emp('Victoria', 'Kano State')
+
+console.log(food.eat())

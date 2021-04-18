@@ -18,27 +18,22 @@
 //
 // Solution
 //
-//  To solve first
-// 1. First remove scores of 0 from the array
-// 2. ceate a temp and count variable
-// 3. create an empty array
-// 4. Sort the array from highest to lowest
-// 5. Do a for loop that starts from 1 and from the second item in the array
-// 6.giving a default of 1 at the beginning
-// 7. Add the indexes to an empty array on the condition that one is not equal to the previous
-// 8. if equall then repeat the previous index
-// 9.finally create a loop to increase count based on the constant
 
 
+// A more Optimal Solution
 
-
-
-
-
-
-
-
-
+// function numPlayers(k, scores) {
+//     let count = 0;
+// // Write your code here
+//     const arr = scores.sort((a,b)=> b-a).filter((a,b)=> b-a)
+//     for(let i = 0; i < arr.length; i++){
+//         const num = arr[i]
+//         const new1 = arr.indexOf(num)
+//         if(new1 + 1 <= k) count++
+//     }
+//     return count
+// }
+// console.log(numPlayers(2, [50,50,100,25]))
 
 
 // function numPlayers(k, scores){
