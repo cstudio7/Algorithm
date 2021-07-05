@@ -1,5 +1,5 @@
 // A company is performing an analysis on the computers at its main office.
-// The computers are spaced along a single row. The analysis is performed in the folloeing way:
+// The computers are spaced along a single row. The analysis is performed in the following way:
 //
 // 1. Choose a contiguous segment of a certain number of computers,
 //     starting from the beginning of the row.

@@ -5,7 +5,6 @@
 
 const twoSum = (nums) => {
     let total = 1;
-    let count
     for (let i = 0; i < nums.length; i++) {
         total ^= nums[i]
     }

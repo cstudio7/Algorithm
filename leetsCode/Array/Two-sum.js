@@ -7,7 +7,7 @@
 // return [0, 1].
 
 // Best and fastest hashing solution
-
+// Fastest Solution
 // var twoSum = (nums, target) => {
 //     let map = {};
 //     for (let i = 0; i<nums.length; i++ ){
@@ -21,22 +21,21 @@
 // console.log(twoSum([2,7,11,15], 9))
 
 //Solution 1
-// Fastest Solution
-const twoSum = (nums, target) => {
-    const map = {};
-
-    for (let i = 0; i < nums.length; i++) {
-        const another = target - nums[i];
-
-        if (another in map) {
-            return [map[another], i];
-        }
-
-        map[nums[i]] = i;
-    }
-
-    return null;
-};
+// const twoSum = (nums, target) => {
+//     const map = {};
+//
+//     for (let i = 0; i < nums.length; i++) {
+//         const another = target - nums[i];
+//
+//         if (another in map) {
+//             return [map[another], i];
+//         }
+//
+//         map[nums[i]] = i;
+//     }
+//
+//     return null;
+// };
 
 let dic = {}
 for(let i = 0; i < nums.length; i++) {
