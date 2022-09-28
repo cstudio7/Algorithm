@@ -3,7 +3,7 @@
 //     All but one integer occur in pairs.
 //     Your task is to find out the number that occurs only once.
 
-    Input Format
+    // Input Format
 // The first line of the input contains an integer N indicating number of integers.
 //     The next line contains N space separated integers that form the array A.
 

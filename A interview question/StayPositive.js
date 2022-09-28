@@ -23,8 +23,6 @@
 // arr = [5]
 // The starting value of x is 1.
 
-
-
 // const stayPositive = (arr) => {
 //     let x = 1
 //     let temp = 0

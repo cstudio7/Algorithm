@@ -51,7 +51,7 @@ const numsIsland = (grid) => {
 
 //convert stuff around to water
 const terraform = (rowIn, colIn,grid) => {
-    //     ["1","1","0","0","0"],
+//     ["1","1","0","0","0"],
 //     ["1","1","0","0","0"],
 //     ["0","0","1","0","0"],
 //     ["0","0","0","1","1"]

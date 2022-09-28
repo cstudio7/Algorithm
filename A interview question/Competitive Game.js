@@ -26,6 +26,31 @@
 //
 // Solution
 //
+//  An Optimal Solution (The best and fastest Solution)
+// function numPlayers(k, scores) {
+//     let count = 0
+//     const arr = scores.sort((a,b)=> b-a).filter(a=>a!==0)
+//     let dup = [...new Set(arr)]
+//     let map = {}
+//     for(let i = 0; i < arr.length; i++){
+//         map[arr[i]] = (map[arr[i]] + 1) || 1
+//     }
+//     for(let i = 0; i<dup.length ;i++){
+//         if(count < k){
+//             count += map[dup[i]]
+//         } else {
+//             return count
+//         }
+//     }
+//     return count
+// }
+// console.log(numPlayers(3,[100,50,50,25,0]))
+// console.log(numPlayers(4,[2,2,3,4,5]))
+// console.log(numPlayers(4,[20,40,60,80,100]))
+
+
+
+
 
 // try 1
 
@@ -47,7 +72,6 @@
 //     let count = 0
 //     const arr = scores.sort((a,b)=> b-a)
 //     let map = {}
-//     let map2 = []
 //     for(let i = 0; i < arr.length; i++){
 //         if(scores[i] === 0) continue
 //         map[scores[i]] = (map[scores[i]] + 1) || 1
@@ -121,3 +145,23 @@ return count
 console.log(numPlayers(4, [2, 2,0,3, 4, 5]))
 
 
+const { performance } = require('perf_hooks');
+
+var startTime = performance.now()
+
+function numPlayers(k, scores) {
+    let count = 0;
+    const arr = scores.sort((a,b)=> b-a).filter(a=> a!==0)
+    for(let i = 0; i < arr.length; i++){
+        const num = arr[i]
+        const new1 = arr.indexOf(num)
+        if(k >= new1 + 1) count++
+    }
+    return count
+}
+console.log(numPlayers(4, [2, 2,0,3, 4, 5]))
+
+
+var endTime = performance.now()
+
+console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)

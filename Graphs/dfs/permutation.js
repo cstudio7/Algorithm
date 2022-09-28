@@ -1,4 +1,5 @@
 
+
 // Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
 //
 //
@@ -16,6 +17,10 @@
 // Input: nums = [1]
 // Output: [[1]]
 
+//Understanding Slice
+// const multiply = [2,3,4,2,3,7,5,]
+//
+// console.log(multiply.slice(1,4))
 
 // function permutation (nums) {
 //

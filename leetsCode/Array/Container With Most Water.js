@@ -36,18 +36,18 @@
 function minStart(arr) {
     // Write your code here
     let count = Math.max(...arr)
-    if(sum(arr,count) === 0){
+    if (sum(arr, count) === 0) {
         count++
-        sum(arr,count)
+        sum(arr, count)
     }
-    return
+
 }
 
-const sum = (arr, count) => {
-    for(let i = 0; i<arr.length; i++){
+let sum = (arr, count) => {
+    for (let i = 0; i < arr.length; i++) {
         count = count + arr[i]
-        if(count === 0) return 0
+        if (count === 0) return 0
     }
 }
 
-console.log(minStart([-4,3,2,1]))
+console.log(minStart([-4, 3, 2, 1]))

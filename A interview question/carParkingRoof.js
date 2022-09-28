@@ -7,7 +7,6 @@
 // It is required that at least the roofs of k cars are covered by the roofs.
 // What is the minimum length to cover the roofs of k cars?
 //     This function has the following parameters:
-//
 //     cars: an integer array of length, representing the parking space for parking cars
 // k: Integer, indicating the number of cars that must be covered by the roof
 // Sample
@@ -26,17 +25,34 @@
 // 0 <= cars[i] <= 10^14
 // The cars above all parking spaces are unique
 
-// function carParkingRoof(cars, k) {
-// //     // Write your code here
-//     let cars2 = cars.sort((a,b)=>a-b)   // [2,8,10,17]
-//     let count = 0
-//     count = cars2[k-1] - cars[0];
-//     for (let i = 0; i<cars2.length -k; i++ ){
-//         if(count > cars2[k-1+i] - cars[i]){
-//             count = cars[k-1+i] -cars[i]
-//         }
-//     }
-//     return count + 1
-// }
-//
-// console.log(carParkingRoof([2,10,8,17], 3))
+function carParkingRoof(cars, k) {
+    // Write your code here
+    let cars2 = cars.sort((a, b) => a - b)
+    let count = 0
+    count = cars2[k - 1] - cars[0];
+    for (let i = 0; i < cars2.length - k; i++) {
+        if (count > cars2[k - 1 + i] - cars[i]) {
+            count = cars[k - 1 + i] - cars[i]
+        }
+    }
+    return count + 1
+}
+
+//2,8,10,17
+
+console.log(carParkingRoof([2, 10, 8, 17], 3))
+
+// cars, k = [1, 2, 3, 10], 4
+// print(carParkingRoof(cars, k)) # 10
+// #
+// #
+// cars, k = [2, 10, 8, 17], 3
+// print(carParkingRoof(cars, k)) # 9
+// #
+// cars, k = [1, 2, 3, 10, 4], 4
+// print(carParkingRoof(cars, k)) # 10
+// cars, k = [7, 100, 50], 2
+// print(carParkingRoof(cars, k)) # 44
+// #My Testcase
+// cars,k = [6,2,12,7],3
+// print("MINE: ",carParkingRoof(cars, k)) # 6

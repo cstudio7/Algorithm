@@ -15,7 +15,16 @@
 // Input: [1,1,1,3,3,4,3,2,4,2]
 // Output: true
 
+//An Optimal Solution
+// var containsDuplicate = function(nums) {
+//     let n = [... new Set(nums)]
+//
+//     return n.length < nums.length ? 'True' : 'False'
+// };
+//
+// console.log(containsDuplicate([1,2,3,4]))
 
+//Using a Hammer to kill an ant
 // var containsDuplicate = function(nums) {
 //     let map = {};
 //     let count = 0;

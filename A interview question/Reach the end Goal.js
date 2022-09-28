@@ -14,11 +14,10 @@ maxTime = 5
     // #...
 // it takes 5 seconds to reach the end. So we return 'Yes'
 
-// function reachTheEndInTime(grid) {
+// function reachTheEndInTime(grid, maxtime) {
 //     // Write your code here
 //     let n =  grid[0].length
 //     let d =  grid.length
-//     // let e =  grid[0].length - 1
 //     let startX = 0
 //     let startY = 0
 //     const goalX = d-1
@@ -28,87 +27,90 @@ maxTime = 5
 //     const startCell = {
 //         position: { x: startX, y: startY },
 //         moves: 0,
-//         b:0
+//         count: 0
 //     }
+//     // console.log(startCell)
 //     queue.push(startCell)
 //     // HASH MAP X_Y
 //     const visited = {}
 //     visited[`${startX}_${startY}`] = true
 //     // console.log(visited)
 //
-//     let temps = 0
-//     const markCellAsVisited = (x, y, moves, parent) => {
-//         let e = 0
+//     const markCellAsVisited = (x, y, moves, u, parent) => {
 //         const cellKey = `${x}_${y}`
-//         let {b} = parent;
-//         if(temps > moves) {
-//             b += 2
-//         } else {
-//             e = 0
-//         }
-//         temps = moves
-//
+//         let {count} = parent;
+//         let c = 0
+//           count > 0 ? c += count : ''
 //         if (grid[x][y] === '#' || visited[cellKey]) return null
 //         visited[cellKey] = true
 //         const newCell = {
 //             position: { x, y },
 //             moves,
-//             b,
+//             count: u + c,
 //             parent
 //         }
 //         queue.push(newCell)
-//         // console.log(newCell)
 //         return newCell
 //     }
 //
+//     let temp = 0
+//     let sum = 0
 //     while (queue.length > 0) {
 //         const currentCell = queue.shift()
+//         let u
+//         if(temp > currentCell.moves) {
+//             sum++
+//             u = sum
+//         } else {
+//             u = 0
+//         }
+//         temp = currentCell.moves
 //
 //         if (
 //             currentCell.position.x === goalX && currentCell.position.y === goalY) {
-//             // console.log(currentCell)
-//             return (currentCell.moves + currentCell.b )
+//             const result = currentCell.moves + currentCell.count + 1
+//             return maxtime <= result ? 'Yes' : 'No'
 //         }
 //
 //         let { position } = currentCell
+//
 //
 //         // RIGHT
 //         for (let x = position.x + 1; x < grid.length; x++) {
 //             let y = position.y
 //             const moves = x+y;
-//             if (!markCellAsVisited(x, y, moves, currentCell)) break
+//             if (!markCellAsVisited(x, y, moves,u, currentCell)) break
 //         }
 //         // BOTTOM
 //         for (let y = position.y + 1; y < n; y++) {
 //             let x = position.x
 //             const moves = x+y
-//             if (!markCellAsVisited(x, y, moves, currentCell)) break
+//             if (!markCellAsVisited(x, y, moves,u, currentCell)) break
 //         }
 //         // TOP
 //         for (let y = position.y - 1; y >= 0; y--) {
 //             let x = position.x
 //             const moves = x+y
-//             if (!markCellAsVisited(x, y, moves, currentCell)) break
+//             if (!markCellAsVisited(x, y, moves, u, currentCell)) break
 //         }
 //         // LEFT
 //         for (let x = position.x - 1; x >= 0; x--) {
 //             let y = position.y
 //             const moves = x+y
-//             if (!markCellAsVisited(x, y, moves, currentCell)) break
+//             if (!markCellAsVisited(x, y, moves, u, currentCell)) break
 //         }
-//         // console.log(queue)
 //     }
 //
 //     return 'No'
 // }
 //
-//
+// console.log(reachTheEndInTime(['...','.X.','...'], 5))
 // console.log(reachTheEndInTime(['.....','##.##','#...#','#.###','#....']))
 // console.log(reachTheEndInTime(['.....','##.##','#...#','#.#.#','#....']))
 // console.log(reachTheEndInTime(['....#','###.#','###.#','##..#','##.##','##...','####.']))
 
 const reachTheEnd = (arr, maxTime) => {
-    const grid = []
+    const grid = [];
     for(let x in arr){
         grid.push(arr[x].split(''))
     }
